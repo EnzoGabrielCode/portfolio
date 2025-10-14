@@ -1,0 +1,693 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&display=swap');
+
+body{
+    background-color: #111217;
+    font-family: "Inter", sans-serif;
+    color: #9A9A9A;
+}
+
+header{
+    display: flex;
+    /* width: 100vw; */
+    height: 56px;
+    background-color: #111217;
+    border-bottom: 1px solid #28292E;
+    align-items: center;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.nav_buttons{
+    text-decoration: none;
+    color: #9A9A9A;
+}
+
+.nav_menu{
+    display: flex;
+    gap: 8%;
+    font-size: 0.9rem;
+}
+
+.logo_nome{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo_nome > img{
+    width: 50%;
+}
+
+.container_apresentacao{
+    display: flex;
+    height: auto;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.container_textos{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    gap: 24px;
+}
+
+.container_img{
+    width: 280%;
+}
+
+.container_nome{
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 1%;
+}
+
+.container_nome h1{
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.container_nome h2{
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.texto_descricao{
+    font-size: 1.25rem;
+}
+
+.container_img > img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.container_descricao{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-right: 30px;
+    color: #fff;
+}
+
+.container_descricao h3{
+    text-transform: uppercase;
+}
+
+.container_descricao p{
+    color: #9A9A9A;
+    padding-right: 15px;
+}
+
+.links{
+    display: flex;
+    gap: 10px;
+    color: #9A9A9A;
+    align-items: center;
+    padding-left: 15px;
+    height: 30px;
+}
+
+.menu_links{
+    display: flex;
+    gap: 10px;
+    color: #9A9A9A;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 30px;
+}
+
+.menu_link{
+    color: #9A9A9A;
+    font-size: 2rem;
+}
+
+.btn{
+    display: flex;
+    gap: 0.625rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: transparent;
+    border-radius: 3.125rem;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.links .btn{
+    font-size: 1.25rem;
+}
+
+#tecnologias{
+    margin-top: 5%;
+}
+
+.container_tecnologias{
+    background-color: #28292E;
+    height: 300px;
+    display: flex;
+    gap: 8%;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.tecnologia_texto{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tecnologia_texto > h3{
+    color: #F0F0F0;
+    font-weight: 200;
+    font-size: 3rem;
+}
+
+.tecnologia_badge{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.caixa_badge{
+    border: 1px solid #3F3F43;
+    height: 128px;
+    width: 128px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caixa_badge img{
+    width: auto;
+    height: 64px;
+}
+
+.container_projetos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    gap: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.projeto_texto h2{
+    font-size: 4rem;
+    font-weight: 200;
+    color: #F0F0F0;
+    text-transform: uppercase;
+}
+
+.container_cards{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: #28292E;
+    border-radius: 20px;
+    padding: 35px;
+    gap: 35px;
+}
+
+
+.descricao_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card_text{
+    color: #F0F0F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card_text h4{
+    font-size: 2.5rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+
+.card_text p{
+    font-size: 1.1rem;
+}
+
+.card_text ul li{
+    font-size: 1.2rem;
+    list-style: disc;
+    margin-left: 3.5%;
+    color: #9A9A9C;
+}
+
+.card_tecnologias{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.card_tecnologias .caixa_badge{
+    width: 80px;
+    height: 80px;
+}
+
+.card_tecnologias img{
+    width: 40px;
+    height: 40px;
+}
+
+.card_btn{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.card_btn .btn{
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+.card_btn span{
+    text-transform: uppercase;
+    color: #F0F0F0;
+    text-decoration: none;
+}
+
+.projeto_btn .btn{
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.contairner_formacao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    color: #F0F0F0;
+    margin-bottom: 5%;
+    gap: 50px;
+}
+
+.textos_info{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10%;
+}
+
+.formacao_title h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 200;
+    padding-bottom: 20px;
+}
+
+.formacao_text{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formacao_text h3{
+    font-size: 1.7rem;
+}
+
+.formacao_text {
+    font-size: 1.5rem;
+}
+
+.experiencias_title{
+    width: 50%;
+}
+
+.experiencias_title h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 200;
+    padding-bottom: 20px;
+}
+
+.experiencias_text h3{
+    font-size: 1.7rem;
+
+}
+
+.experiencias_text h4{
+    font-size: 1.5rem;
+    line-height: 160%;
+}
+
+.experiencias_text p{
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+}
+
+.experiencias_text ul li{
+    font-size: 1.5rem;
+    list-style: disc;
+    margin-left: 2.5%;
+}
+
+.cursos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 50px;
+}
+
+.cursos_text h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+.cursos_container{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.cursos_card{
+    display: flex;
+    flex-direction: column;
+    background-color: #28292E;
+    border-radius: 10px;
+    gap: 35px;
+    padding: 35px;
+    width: 388px;
+}
+
+.certificado_img img{
+    border-radius: 10px;
+    width: 318px;
+    height: 200px;
+}
+
+.certificado_texto h4{
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.certificado_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificado_btn .btn{
+    padding: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.container_contato{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+    padding-top: 60px;
+    border-top: 1px solid #3F3F43;
+    gap: 20px;
+}
+
+.container_contato h2{
+    color: #F0F0F0;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.container_contato p{
+    color: #9A9A9A;
+    font-size: 1.25rem;
+}
+
+.container_contato .menu__icon{
+    color: #9A9A9A;
+}
+
+.container_contato ul{
+    display: flex;
+    gap: 25px;
+}
+
+.container_contato a{
+    color: #9A9A9A;
+    font-size: 1.5rem;
+}
+
+.container_contato .btn{
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    margin-bottom: 5px;
+    border-top: 1px solid #3F3F43;
+}
+
+footer a{
+    text-decoration: none;
+    color: #9A9A9A;
+}
+
+.up:hover{
+    transform: scale(1.08);
+}
+
+.texto_activate:hover{
+    color: #fff;
+}
+
+.active{
+    color: #fff;
+}
+
+@media (max-width: 768px){
+    header{
+        padding: 0;
+        width: 100%;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        top: 0%;
+        right: 0%;
+        left: 0%;
+    }
+    .nav_menu{
+        width: 100%;
+        gap: 10px;
+        justify-content: space-between;
+    }
+    .container_img{
+        display: none;
+    }
+    nav span{
+        font-size: 1rem;
+    }
+
+    .logo_nome{
+        display: none;
+    }
+
+    .textos_info{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .cursos_container{
+        flex-direction: column;
+    }
+
+    #home{
+        margin-top: 100px;
+        padding-bottom: 50px;
+    }
+
+    .container_nome h1{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .container_nome h2{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .container_descricao{
+        padding: 0;
+    }
+
+    .container_descricao p{
+        padding: 0;
+    }
+
+    .container_descricao h3{
+        font-size: 1.15rem;
+        text-align: center;
+    }
+
+    .texto_descricao{
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 0;
+    }
+
+    .links{
+        flex-direction: column;
+    }
+
+    .tecnologia_texto h3{
+        font-size: 2.25rem;
+    }
+
+    .container_tecnologias{
+        padding-top: 30px;
+        padding-bottom: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .tecnologia_badge{
+        flex-direction: row;
+    }
+
+    .caixa_badge{
+        width: 80px;
+        height: 80px;
+    }
+
+    .projeto_texto h2{
+        font-size: 3.5rem;
+    }
+
+    .card img{
+        width: 100%;
+    }
+
+    .caixa_badge img{
+        width: 40px;
+        height: 40px;
+    }
+    
+    .card_text h4{
+        font-size: 2rem;
+        white-space: wrap;
+    }
+
+    .container_projetos{
+        margin-bottom: 40px;
+    }
+
+    .formacao_title h2{
+        font-size: 2.5rem;
+        /* text-align: center; */
+    }
+
+    .formacao_title h3{
+        font-size: 1rem;
+    }
+
+    .formacao_title li{
+        font-size: 1rem;
+    }
+
+    .experiencias_text{
+        width: 300px;
+    }
+
+    .experiencias_title h2{
+        font-size: 2.5rem;
+        text-align: center;
+        width: auto;
+    }
+
+    .experiencias_title h3{
+        font-size: 1.15rem;
+    }
+
+    .experiencias_title h4{
+        font-size: 1.15rem;
+    }
+
+    .experiencias_title p{
+        font-size: 1rem;
+    }
+
+    .experiencias_text ul li{
+        font-size: 1rem;
+    }
+
+    .cursos_text h2{
+        font-size: 3.5rem;
+    }
+
+    .cursos_container{
+        gap: 30px;
+    }
+
+    .cursos_card{
+        width: 90%;
+    }
+
+    .cursos_card img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .container_contato h2{
+        font-size: 2rem;
+    }
+
+    .container_contato p{
+        font-size: 1rem;
+        padding: 0 30px;
+        text-align: center;
+    }
+
+    .container_contato .btn{
+        font-size: 1rem;
+    }
+
+    footer p{
+        text-align: center;
+        font-size: 0.7rem;
+    }
+}
