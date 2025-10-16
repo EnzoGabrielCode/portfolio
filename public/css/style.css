@@ -21,6 +21,7 @@ header{
     top: 0;
     left: 0;
     right: 0;
+    white-space: nowrap;
 }
 
 .nav_buttons{
@@ -43,10 +44,53 @@ header{
     width: 50%;
 }
 
+.container_apresentacao_home{
+    display: flex;
+    height: 99vh;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 15%; */
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.container_textos_home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 24px;
+}
+
+.container_img{
+    width: 280%;
+}
+
+.container_nome_home{
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 1%;
+}
+
+.container_nome_home h1{
+    font-size: 4.5rem;
+    font-weight: 600;
+}
+
+.container_nome_home h2{
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 300;
+}
+
 .container_apresentacao{
     display: flex;
     height: auto;
-    margin-top: 10%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 9%;
+    margin-bottom: 5%;
     margin-left: 10%;
     margin-right: 10%;
 }
@@ -54,13 +98,8 @@ header{
 .container_textos{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     height: 100%;
     gap: 24px;
-}
-
-.container_img{
-    width: 280%;
 }
 
 .container_nome{
@@ -70,13 +109,18 @@ header{
 }
 
 .container_nome h1{
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 600;
 }
 
 .container_nome h2{
-    font-size: 2rem;
+    font-size: 2.5rem;
+    text-align: center;
     font-weight: 300;
+}
+
+.botao_continue{
+    width: 30%;
 }
 
 .texto_descricao{
@@ -98,6 +142,7 @@ header{
 
 .container_descricao h3{
     text-transform: uppercase;
+    font-size: 2rem;
 }
 
 .container_descricao p{
@@ -109,8 +154,6 @@ header{
     display: flex;
     gap: 10px;
     color: #9A9A9A;
-    align-items: center;
-    padding-left: 15px;
     height: 30px;
 }
 
@@ -202,6 +245,7 @@ header{
     gap: 50px;
     margin-left: 10%;
     margin-right: 10%;
+    margin-bottom: 4%;
 }
 
 .projeto_texto h2{
@@ -311,7 +355,7 @@ header{
     margin-right: 10%;
     margin-top: 5%;
     color: #F0F0F0;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
     gap: 50px;
 }
 
@@ -431,8 +475,35 @@ header{
     text-transform: uppercase;
 }
 
+.disciplinas{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 95vh;
+}
+
+.disciplinas h2{
+    font-size: 4rem;
+    font-weight: 200;
+    color: #F0F0F0;
+    text-transform: uppercase;
+    padding-top: 5%;
+}
+
+.disciplinas ul{
+    margin-top: 3%;
+    /* font-size: 1rem; */
+}
+
+.disciplinas ul li{
+    font-size: 1.4rem;
+    padding-top: 3px;
+}
+
 .container_contato{
     display: flex;
+    height: 85vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -480,6 +551,7 @@ footer{
     padding-top: 10px;
     margin-bottom: 5px;
     border-top: 1px solid #3F3F43;
+    height: 35px;
 }
 
 footer a{
@@ -499,7 +571,7 @@ footer a{
     color: #fff;
 }
 
-@media (max-width: 768px){
+/* @media (max-width: 768px){
     header{
         padding: 0;
         width: 100%;
@@ -619,9 +691,9 @@ footer a{
     .formacao_title h2{
         font-size: 2.5rem;
         /* text-align: center; */
-    }
+    /* } */
 
-    .formacao_title h3{
+    /* .formacao_title h3{
         font-size: 1rem;
     }
 
@@ -690,4 +762,4 @@ footer a{
         text-align: center;
         font-size: 0.7rem;
     }
-}
+} */

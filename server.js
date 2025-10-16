@@ -1,17 +1,20 @@
-const express = require('express');
+import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+import portfolioRoutes from "./src/routes/portifolioRoutes.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
+const PORT = 3000;
 
-const port = 3000;
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
-app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static('public'));
+app.use("/", portfolioRoutes);
 
-app.get('/', (req, res) =>{
-    res.render('index');
-})
-
-app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`)
-})
+app.listen(PORT, () => console.log(`Servidor rodando em http://localhost:${PORT}`));

@@ -1,0 +1,25 @@
+<div class="card">
+      <img src="/img/prjetos/<%= projeto.png %>.png" alt="<%= projeto.titulo %>">
+      <div class="descricao_card">
+        <div class="card_text">
+          <h4><%= projeto.titulo %></h4>
+          <p><%= projeto.descricao %></p>
+        </div>
+        <div class="card_tecnologias">
+          <div class="caixa_badge"><img src="/img/tecnologias/HTML.png" alt="HTML" class="badge_HTML"></div>
+          <div class="caixa_badge"><img src="/img/tecnologias/CSS.png" alt="CSS" class="badge_CSS"></div>
+          <div class="caixa_badge"><img src="/img/tecnologias/JS.png" alt="JS" class="badge_JS"></div>
+        </div>
+        <div class="card_btn">
+          <a href="<%= projeto.link %>" target="_blank">
+            <button class="btn btn--primary up">
+              <span>Prévia do Projeto</span>
+              <i class="bi bi-arrow-up-right"></i>
+            </button>
+          </a>
+          <a class="up" href="<%= projeto.gitHub %>" target="_blank">
+            <span>Ver repositório</span>
+          </a>
+        </div>
+      </div>
+    </div>
