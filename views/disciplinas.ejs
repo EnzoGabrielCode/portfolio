@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifólio</title>
+    <title>Portfólio | Disciplinas</title>
 
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
 </head>
 <body>
     <header>
@@ -18,17 +16,35 @@
             <img src="/img/home/EnzoGabrielCode.png" alt="">
         </div>
     </header>
+
     <main>
-        
         <div class="disciplinas">
             <h2>Minhas Disciplinas</h2>
+
+            <!-- Formulário para adicionar nova disciplina -->
+            <form action="/disciplinas/add" method="POST" class="form_disciplina">
+                <input type="text" name="nome" placeholder="Digite o nome da disciplina" required class="input_disciplina">
+                <button type="submit" class="btn">Adicionar</button>
+            </form>
+
+            <!-- Lista de disciplinas -->
             <ul>
                 <% disciplinas.forEach(d => { %>
-                    <li><%= d %></li>
+                    <li>
+                        <form action="/disciplinas/edit/<%= d.id %>" method="POST" class="form_inline">
+                            <input type="text" name="nome" value="<%= d.nome %>" class="input_inline">
+                            <button type="submit" class="btn"><i class="bi bi-pencil-square"></i></button>
+                        </form>
+
+                        <form action="/disciplinas/delete/<%= d.id %>" method="POST" class="form_inline">
+                            <button type="submit" class="btn"><i class="bi bi-trash"></i></button>
+                        </form>
+                    </li>
                 <% }) %>
             </ul>
         </div>
     </main>
+
     <%- include('partials/footer') %>
 </body>
 </html>
