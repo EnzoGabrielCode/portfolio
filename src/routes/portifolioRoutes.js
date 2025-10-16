@@ -3,6 +3,7 @@ import { sobreMim } from "../models/sobre.js"
 import { disciplinas } from "../models/disciplinas.js"
 import { projetos } from "../models/projetos.js"
 import { contato } from "../models/contato.js"
+import { dados } from "../models/dados.js";
 
 const router = express.Router();
 
@@ -16,13 +17,6 @@ router.get("/projetos", (req, res) => res.render("projetos", { projetos }));
 
 router.get("/contato", (req, res) => res.render("contato", { contato }));
 
-router.get("/dashboard", (req, res) => {
-  const dados = {
-    totalDisciplinas: disciplinas.length,
-    totalProjetos: projetos.length,
-    tecnologias: ["Node.js", "Express", "EJS"]
-  };
-  res.render("dashboard", { dados });
-});
+router.get("/dashboard", (req, res) => res.render("dashboard", { dados }));
 
 export default router;
