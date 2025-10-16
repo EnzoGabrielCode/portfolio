@@ -30,7 +30,7 @@ Forneça um guia passo a passo para que outros desenvolvedores possam rodar o se
 
 ```bash
 # 1. Clone o repositório
-git clone [https://github.com/EnzoGabrielCode/portfolio.git](https://github.com/EnzoGabrielCode/portfolio.git)
+git clone https://github.com/EnzoGabrielCode/portfolio.git
 
 # 2. Acesse a pasta do projeto
 cd portfolio
