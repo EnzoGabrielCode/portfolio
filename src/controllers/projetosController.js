@@ -1,18 +1,14 @@
-// projetosController.js
 import { projetos } from "../models/projetos.js";
 import * as Projetos from "../models/projetos.js";
 
-// Exibe a página pública de projetos
 export const listar = (req, res) => {
   res.render("projetos", { projetos: Projetos.getAll() });
 };
 
-// **NOVO** - Exibe a página de gerenciamento (CRUD)
 export const renderCrudPage = (req, res) => {
   res.render("crud", { projetos: Projetos.getAll() });
 };
 
-// **NOVO** - Exibe a página de edição para um projeto específico
 export const renderEditPage = (req, res) => {
     const { titulo } = req.params;
     const projeto = Projetos.getAll().find(p => p.titulo === titulo);
@@ -23,19 +19,16 @@ export const renderEditPage = (req, res) => {
     }
 }
 
-// Adiciona um novo projeto
 export const adicionar = (req, res) => {
   const { titulo, descricao, link, gitHub, png } = req.body;
   if (titulo && descricao) {
-    // Aqui você pode adicionar uma verificação para não adicionar títulos duplicados
     projetos.push({ titulo, descricao, link, gitHub, png });
   }
   res.redirect("/projetos/crud");
 };
 
-// Edita um projeto existente
 export const editar = (req, res) => {
-  const { titulo } = req.params; // Título original
+  const { titulo } = req.params; 
   const { novoTitulo, novaDescricao, novoLink, novoGitHub, novoPng } = req.body;
   const projeto = projetos.find(p => p.titulo === titulo);
     if (projeto) {
@@ -48,7 +41,6 @@ export const editar = (req, res) => {
     res.redirect("/projetos/crud");
 };
 
-// Exclui um projeto
 export const excluir = (req, res) => {
   const { titulo } = req.params;
   const index = projetos.findIndex(p => p.titulo === titulo);
