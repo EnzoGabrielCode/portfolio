@@ -1,49 +1,56 @@
-import { projetos } from "../models/projetos.js";
-import * as Projetos from "../models/projetos.js";
+import Projeto from "../models/projetos.js";
 
-export const listar = (req, res) => {
-  res.render("projetos", { projetos: Projetos.getAll() });
+export const listar = async (req, res) => {
+  const projetos = await Projeto.findAll();
+  res.render("projetos", { projetos });
 };
 
-export const renderCrudPage = (req, res) => {
-  res.render("crud", { projetos: Projetos.getAll() });
+export const renderCrudPage = async (req, res) => {
+  const projetos = await Projeto.findAll();
+  res.render("crud", { projetos });
 };
 
-export const renderEditPage = (req, res) => {
-    const { titulo } = req.params;
-    const projeto = Projetos.getAll().find(p => p.titulo === titulo);
-    if(projeto){
-        res.render('editar', { projeto });
-    } else {
-        res.status(404).send('Projeto não encontrado');
-    }
-}
+export const renderEditPage = async (req, res) => {
+  const { titulo } = req.params;
+  const projeto = await Projeto.findOne({ where: { titulo: titulo } });
 
-export const adicionar = (req, res) => {
+  if (projeto) {
+    res.render("editar", { projeto });
+  } else {
+    res.status(404).send("Projeto não encontrado");
+  }
+};
+
+export const adicionar = async (req, res) => {
   const { titulo, descricao, link, gitHub, png } = req.body;
   if (titulo && descricao) {
-    projetos.push({ titulo, descricao, link, gitHub, png });
+    await Projeto.create({ titulo, descricao, link, gitHub, png });
   }
   res.redirect("/projetos/crud");
 };
 
-export const editar = (req, res) => {
-  const { titulo } = req.params; 
+export const editar = async (req, res) => {
+  const { titulo } = req.params;
   const { novoTitulo, novaDescricao, novoLink, novoGitHub, novoPng } = req.body;
-  const projeto = projetos.find(p => p.titulo === titulo);
-    if (projeto) {
-    projeto.titulo = novoTitulo || projeto.titulo;
-    projeto.descricao = novaDescricao || projeto.descricao;
-    projeto.link = novoLink || projeto.link;
-    projeto.gitHub = novoGitHub || projeto.gitHub;
-    projeto.png = novoPng || projeto.png;
-  }
-    res.redirect("/projetos/crud");
+
+  await Projeto.update(
+    {
+      titulo: novoTitulo,
+      descricao: novaDescricao,
+      link: novoLink,
+      gitHub: novoGitHub,
+      png: novoPng,
+    },
+    {
+      where: { titulo: titulo },
+    }
+  );
+
+  res.redirect("/projetos/crud");
 };
 
-export const excluir = (req, res) => {
+export const excluir = async (req, res) => {
   const { titulo } = req.params;
-  const index = projetos.findIndex(p => p.titulo === titulo);
-  if (index !== -1) projetos.splice(index, 1);
+  await Projeto.destroy({ where: { titulo: titulo } });
   res.redirect("/projetos/crud");
 };

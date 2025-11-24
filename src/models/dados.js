@@ -1,13 +1,26 @@
-import { disciplinas } from "./disciplinas.js";
-import { projetos } from "./projetos.js";
+import Disciplina from "./disciplinas.js";
+import Projeto from "./projetos.js";
 
-export function getDados() {
+export async function getDados() {
+  const totalDisciplinas = await Disciplina.count();
+  const totalProjetos = await Projeto.count();
+
   return {
-    totalDisciplinas: disciplinas.length,
-    totalProjetos: projetos.length,
+    totalDisciplinas: totalDisciplinas,
+    totalProjetos: totalProjetos,
     tecnologias: [
-      "Node.js", "Express", "EJS", "HTML", "CSS", "JavaScript",
-      "Git", "GitHub", "Figma", "Scrum", "MySQL", "TypeScript", "React"
-    ]
+      "Node.js",
+      "Express",
+      "EJS",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "GitHub",
+      "Figma",
+      "Scrum",
+      "MySQL",
+      "Sequelize",
+    ],
   };
 }
