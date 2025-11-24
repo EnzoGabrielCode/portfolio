@@ -35,12 +35,12 @@ O projeto foi construído utilizando **Node.js** e **Express**, seguindo rigoros
 
 O código está organizado da seguinte forma:
 
-* `src/database`: Configuração de conexão com o MySQL.
-* `src/models`: Definição das tabelas (Disciplinas, Projetos).
-* `src/controllers`: Lógica de negócios e comunicação com o banco.
-* `src/routes`: Definição das rotas da aplicação.
-* `views`: Arquivos EJS (Frontend) e parciais (Navbar, Footer).
-* `public`: Arquivos estáticos (CSS, Imagens).
+* src/database: Configuração de conexão com o MySQL.
+* src/models: Definição das tabelas (Disciplinas, Projetos).
+* src/controllers: Lógica de negócios e comunicação com o banco.
+* src/routes: Definição das rotas da aplicação.
+* views: Arquivos EJS (Frontend) e parciais (Navbar, Footer).
+* public: Arquivos estáticos (CSS, Imagens).
 
 ## ⚙️ Como Executar o Projeto Localmente
 
@@ -48,17 +48,38 @@ Siga os passos abaixo para rodar a aplicação na sua máquina:
 
 ### 1. Pré-requisitos
 Certifique-se de ter instalado:
-* [Node.js](https://nodejs.org/)
-* [MySQL Server](https://dev.mysql.com/downloads/mysql/)
+* Node.js
+* MySQL Server
 
 ### 2. Instalação
 
-```bash
-# 1. Clone o repositório
-git clone [https://github.com/EnzoGabrielCode/portfolio.git](https://github.com/EnzoGabrielCode/portfolio.git)
+    # 1. Clone o repositório
+    git clone [https://github.com/EnzoGabrielCode/portfolio.git](https://github.com/EnzoGabrielCode/portfolio.git)
 
-# 2. Acesse a pasta do projeto
-cd portfolio
+    # 2. Acesse a pasta do projeto
+    cd portfolio
 
-# 3. Instale as dependências listadas no package.json
-npm install
+    # 3. Instale as dependências listadas no package.json
+    npm install
+
+### 3. Configuração do Banco de Dados
+
+1.  Abra o seu MySQL (Workbench ou Terminal) e crie o banco de dados:
+
+        CREATE DATABASE portfolio_db;
+
+2.  No código do projeto, abra o arquivo src/database/db.js.
+3.  Edite a linha de conexão com a sua senha do MySQL:
+
+        const sequelize = new Sequelize('portfolio_db', 'root', 'SUA_SENHA_AQUI', { ... });
+
+### 4. Execução
+
+    # Inicie o servidor
+    npm start
+
+O servidor rodará em http://localhost:3000. 
+Nota: Na primeira execução, o sistema irá criar as tabelas e inserir os dados iniciais automaticamente.
+
+---
+Desenvolvido por Enzo Gabriel 🚀
